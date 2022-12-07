@@ -10,7 +10,7 @@ const DELETE_TODO = "DELETE_TODO";
 const reducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
-      return [];
+      return [...state, { text: action.text, id: Date.now() }]; //스프레드 : 새로운 배열을 return
     case DELETE_TODO:
       return [];
     default:
@@ -18,6 +18,8 @@ const reducer = (state = [], action) => {
   }
 };
 const store = legacy_createStore(reducer);
+
+store.subscribe(() => console.log(store.getState()));
 
 // const createToDo = (toDo) => {
 //   const li = document.createElement("li");
