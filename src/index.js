@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { legacy_createStore } from "redux";
 
 const form = document.querySelector("form");
 const input = document.querySelector("input");
@@ -17,7 +17,7 @@ const reducer = (state = [], action) => {
       return state;
   }
 };
-const store = createStore(reducer);
+const store = legacy_createStore(reducer);
 
 // const createToDo = (toDo) => {
 //   const li = document.createElement("li");
